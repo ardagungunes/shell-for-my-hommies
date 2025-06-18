@@ -1,0 +1,60 @@
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.lib
+*.pdb
+*.ipch
+*.iobj
+*.idb
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# Others
+*.log
+*.tlog
+*.lastbuildstate
+*.opensdf
+*.sdf
+*.cache
+*.db
+*.VC.db
+*.VC.VC.opendb
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Compiled source
+*.obj
+*.o
+*.gch
+
+# Precompiled Headers
+*.pch
+
+# Others
+*.aps
+*.ncb
+*.sbr
+*.sdf
+*.ipch
+*.res
+*.ilk
+
+# Crash dumps
+*.mdmp

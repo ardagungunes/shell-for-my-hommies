@@ -128,6 +128,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ShellForMyHommies.cpp" />
+    <ClCompile Include="terminal.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="terminal.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

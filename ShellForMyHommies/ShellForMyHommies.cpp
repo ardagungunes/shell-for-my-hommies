@@ -1,7 +1,11 @@
 #include "terminal.h"
+#include "commands.h"
 #include <conio.h>
 
+bool startsWith(std::string&, const std::string&);
+
 int main() {
+
     std::string currentPath = takeBasePath();
     std::string charSequence;
 
@@ -9,6 +13,7 @@ int main() {
     std::cout << currentPath;
 
     while (true) {
+
         int ch = _getch();
         char pressed_char = static_cast<char>(ch);
 
@@ -25,6 +30,11 @@ int main() {
             charSequence += pressed_char;
             std::cout << pressed_char;
         }
+        else if (ch == 13) {
+            if (startsWith(charSequence, SHELL_CD)) {
+                changeDirectory();
+            }
+        }
 
         // Debugging Only!!!
         if (ch == 27) {
@@ -36,4 +46,8 @@ int main() {
     // Debugging Only
     std::cout << "\nCaptured Sequence: " << charSequence << std::endl;
     return 0;
+}
+
+bool startsWith(std::string& str, const std::string& cmp) {
+    return str.compare(0, cmp.length(), cmp) == 0;
 }

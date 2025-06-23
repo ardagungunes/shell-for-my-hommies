@@ -6,6 +6,7 @@
 
 // Returns the base path string for the shell prompt, e.g., "C:\Users\Username>"
 std::string takeBasePath() {
+
     char* homeDrive = nullptr;
     char* homePath = nullptr;
     size_t homeDriveSize = 0;
@@ -26,6 +27,7 @@ std::string takeBasePath() {
 
 // Moves the console cursor left or right based on arrow key input
 void moveCursor(int arrowKey, std::string currentPath) {
+
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(hConsole, &csbi);
@@ -43,6 +45,7 @@ void moveCursor(int arrowKey, std::string currentPath) {
 }
 
 void deleteChar(std::string& charSequence, int currentPathSize) {
+
     HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     CONSOLE_SCREEN_BUFFER_INFO csbi;
     GetConsoleScreenBufferInfo(hConsole, &csbi);
@@ -52,10 +55,12 @@ void deleteChar(std::string& charSequence, int currentPathSize) {
     int indexToDelete = pos.X - currentPathSize - 1;
     // Ensure index is valid and within the input range
     if (indexToDelete >= 0 && pos.X <= currentPathSize + charSequence.size()) {
+
         // Remove character at the calculated index
         charSequence.erase(indexToDelete, 1);
         pos.X -= 1; // Move cursor left after deletion
         int cursorPos = pos.X;
+        cursorVisibility(false);
 
         // Move cursor to start of input, overwrite with updated string and a space to clear leftover char
         pos.X = currentPathSize;
@@ -65,8 +70,28 @@ void deleteChar(std::string& charSequence, int currentPathSize) {
         // Restore cursor to correct position after deletion
         pos.X = cursorPos;
         SetConsoleCursorPosition(hConsole, pos);
+        cursorVisibility(true);
     }
 }
+
+//  
+void cursorVisibility(bool visible) {
+
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    CONSOLE_CURSOR_INFO cursorInfo;
+    GetConsoleCursorInfo(hConsole, &cursorInfo);
+
+    if (visible) {
+        cursorInfo.bVisible = TRUE;
+    }
+    else {
+        cursorInfo.bVisible = FALSE;
+    }
+    
+    SetConsoleCursorInfo(hConsole, &cursorInfo);
+}
+
+
 
 void setConsoleTitle() {
     TCHAR szOldTitle[MAX_PATH];

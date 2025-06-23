@@ -7,6 +7,8 @@
 std::string takeBasePath();
 void moveCursor(int arrowKey, std::string currentPath);
 void deleteChar(std::string& charSequence, int currentPathSize);
+void cursorVisibility(bool);
 void setConsoleTitle();
+
 
 #endif

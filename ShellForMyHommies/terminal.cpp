@@ -17,12 +17,17 @@ std::string takeBasePath() {
     // Retrieve the HOMEPATH environment variable (e.g., "\Users\Username")
     _dupenv_s(&homePath, &homePathSize, "HOMEPATH");
 
-    std::string basePath = (homeDrive ? homeDrive : "") + std::string(homePath ? homePath : "") + ">";
+    std::string basePath = (homeDrive ? homeDrive : "") + std::string(homePath ? homePath : "");
+
+    std::wstring wBasePath = std::wstring(basePath.begin(), basePath.end());
+    LPCTSTR path = wBasePath.c_str();
+    SetCurrentDirectory(path); // Set the current process directory to basePath
+    std::cout << "__cplusplus = " << __cplusplus << '\n';
 
     // Free memory allocated by _dupenv_s
     free(homeDrive);
     free(homePath);
-    return basePath;
+    return basePath + ">";
 }
 
 // Moves the console cursor left or right based on arrow key input

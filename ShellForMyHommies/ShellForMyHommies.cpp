@@ -32,8 +32,12 @@ int main() {
         }
         else if (ch == 13) {
             if (startsWith(charSequence, SHELL_CD)) {
-                changeDirectory();
+                changeDirectory(charSequence, currentPath);
             }
+            else {
+                std::cout << "Unrecognized command!" << std::endl;
+            }
+            std::cout << std::endl << currentPath;
         }
 
         // Debugging Only!!!

@@ -22,7 +22,7 @@ std::string takeBasePath() {
     std::wstring wBasePath = std::wstring(basePath.begin(), basePath.end());
     LPCTSTR path = wBasePath.c_str();
     SetCurrentDirectory(path); // Set the current process directory to basePath
-    std::cout << "__cplusplus = " << __cplusplus << '\n';
+    //std::cout << "__cplusplus = " << __cplusplus << '\n';
 
     // Free memory allocated by _dupenv_s
     free(homeDrive);

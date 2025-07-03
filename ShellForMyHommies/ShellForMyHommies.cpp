@@ -34,9 +34,13 @@ int main() {
             if (startsWith(charSequence, SHELL_CD)) {
                 changeDirectory(charSequence, currentPath);
             }
+            else if (startsWith(charSequence, SHELL_LS)) {
+                listFiles(currentPath);
+            }
             else {
                 std::cout << "Unrecognized command!" << std::endl;
             }
+            charSequence = "";
             std::cout << std::endl << currentPath;
         }
 

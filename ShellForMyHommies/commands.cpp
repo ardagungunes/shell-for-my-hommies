@@ -6,6 +6,7 @@
 
 
 const std::string SHELL_CD = "cd ";
+const std::string SHELL_LS = "ls";
 
 // cd
 void changeDirectory(std::string& charSequence, std::string& currentPath) {
@@ -38,4 +39,15 @@ void changeProcessDirectory(std::string& currentPath) {
 	std::wstring wBasePath = std::wstring(currentPath.begin(), currentPath.end());
 	LPCTSTR path = wBasePath.c_str();
 	SetCurrentDirectory(path);
+}
+
+// ls
+void listFiles(std::string currentPath) {
+
+	currentPath = currentPath.erase(currentPath.size() - 1);
+	std::cout << std::endl;
+    
+        for (auto const& dir_entry : std::filesystem::directory_iterator{currentPath})
+            std::cout << dir_entry.path().filename() << '\n';
+     
 }

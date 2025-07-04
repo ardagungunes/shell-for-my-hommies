@@ -133,10 +133,12 @@
     <ClCompile Include="commands.cpp" />
     <ClCompile Include="ShellForMyHommies.cpp" />
     <ClCompile Include="terminal.cpp" />
+    <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="commands.h" />
     <ClInclude Include="terminal.h" />
+    <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

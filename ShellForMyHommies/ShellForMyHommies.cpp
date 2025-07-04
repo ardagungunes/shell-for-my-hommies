@@ -6,6 +6,9 @@ bool startsWith(std::string&, const std::string&);
 
 int main() {
 
+    std::string basePath = takeBasePath();
+    basePath.pop_back();
+
     std::string currentPath = takeBasePath();
     std::string charSequence;
 
@@ -32,7 +35,8 @@ int main() {
         }
         else if (ch == 13) {
             if (startsWith(charSequence, SHELL_CD)) {
-                changeDirectory(charSequence, currentPath);
+                changeDirectory(charSequence, currentPath, basePath);
+                
             }
             else if (startsWith(charSequence, SHELL_LS)) {
                 listFiles(currentPath);

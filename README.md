@@ -92,14 +92,6 @@ Unrecognized command!
 
 ---
 
-## 🧑‍💻 Author
-
-**ShellForMyHomies** was created by a developer exploring C++, system programming, and OpenGL. Built for fun, learning, and friends ❤️
-
-Feel free to fork, extend, or contribute.
-
----
-
 ## 📝 License
 
 This project is released under the MIT License.

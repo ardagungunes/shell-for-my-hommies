@@ -6,14 +6,13 @@ A fun, minimal Windows-based shell written in C++ for learning purposes. This pr
 
 ## 🚀 Features
 
-- 🖥️ Custom shell prompt showing current directory
-- ⌨️ Real-time character capturing with `_getch()`
-- ⬅️ Cursor movement using arrow keys
-- 🔙 Backspace support with visual character deletion
-- 📁 `cd` command (including `cd ..`)
-- 📂 `ls` command to list current directory contents
-- 🎯 Uses WinAPI and `std::filesystem` for directory manipulation
-- 🧹 Trim utilities for whitespace handling
+- Custom shell prompt showing current directory
+- Real-time character capturing with `_getch()`
+- Cursor movement using arrow keys
+- Backspace support with visual character deletion
+- `cd` command (including `cd ..`)
+- `ls` command to list current directory contents
+- Uses WinAPI and `std::filesystem` for directory manipulation
 
 ---
 

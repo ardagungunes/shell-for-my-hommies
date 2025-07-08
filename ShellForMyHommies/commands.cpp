@@ -49,10 +49,7 @@ bool isPathValid(std::string& path) {
 	return std::filesystem::exists(path) && std::filesystem::is_directory(path);
 }
 
-void trimCommands(std::string& command) {
-	command.erase(0, command.find_first_not_of(" \t"));
-	command.erase(command.find_last_not_of(" \t") + 1);
-}
+
 
 void changeProcessDirectory(std::string& currentPath) {
 	std::wstring wBasePath = std::wstring(currentPath.begin(), currentPath.end());

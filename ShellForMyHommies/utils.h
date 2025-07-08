@@ -5,7 +5,7 @@
 #include <vector>
 
 std::vector<std::string> splitString(std::string str, char splitToken);
-
+void trimCommands(std::string&);
 
 
 #endif

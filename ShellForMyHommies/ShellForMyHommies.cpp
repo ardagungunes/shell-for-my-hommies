@@ -42,7 +42,7 @@ int main() {
                 listFiles(currentPath);
             }
             else {
-                std::cout << "Unrecognized command!" << std::endl;
+                std::cout << std::endl << "Unrecognized command!" << std::endl;
             }
             charSequence = "";
             std::cout << std::endl << currentPath;

@@ -21,3 +21,8 @@ std::vector<std::string> splitString(std::string str, char splitToken) {
 
 	return vec;
 }
+
+void trimCommands(std::string& command) {
+	command.erase(0, command.find_first_not_of(" \t"));
+	command.erase(command.find_last_not_of(" \t") + 1);
+}

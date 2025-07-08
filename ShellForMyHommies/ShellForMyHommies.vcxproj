@@ -131,12 +131,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="commands.cpp" />
+    <ClCompile Include="parser.cpp" />
     <ClCompile Include="ShellForMyHommies.cpp" />
     <ClCompile Include="terminal.cpp" />
     <ClCompile Include="utils.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="commands.h" />
+    <ClInclude Include="parser.h" />
     <ClInclude Include="terminal.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
